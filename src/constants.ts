@@ -1,10 +1,14 @@
 import { ServiceItem, ProcessStep } from './types';
+import heroImg from './assets/images/laamarix_hero_1783176338381.jpg';
+import aboutImg from './assets/images/laamarix_about_1783176353228.jpg';
+import interiorImg from './assets/images/laamarix_interior_1783176365298.jpg';
+import constructImg from './assets/images/laamarix_construct_1783176380032.jpg';
 
 export const IMAGES = {
-  hero: '/src/assets/images/laamarix_hero_1783176338381.jpg',
-  about: '/src/assets/images/laamarix_about_1783176353228.jpg',
-  interior: '/src/assets/images/laamarix_interior_1783176365298.jpg',
-  construction: '/src/assets/images/laamarix_construct_1783176380032.jpg',
+  hero: heroImg,
+  about: aboutImg,
+  interior: interiorImg,
+  construction: constructImg,
   architectural_design: '/architectural_design.png',
   structural_design: '/structural_design.png',
   house_construction: '/house_construction.png',
