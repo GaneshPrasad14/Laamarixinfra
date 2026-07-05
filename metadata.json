@@ -1,0 +1,8 @@
+{
+  "name": "LAAMARIX INFRA",
+  "description": "Premium architectural planning, construction, interior design, and structural engineering services across Tamilnadu.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
