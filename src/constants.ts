@@ -5,6 +5,12 @@ export const IMAGES = {
   about: '/src/assets/images/laamarix_about_1783176353228.jpg',
   interior: '/src/assets/images/laamarix_interior_1783176365298.jpg',
   construction: '/src/assets/images/laamarix_construct_1783176380032.jpg',
+  architectural_design: '/architectural_design.png',
+  structural_design: '/structural_design.png',
+  house_construction: '/house_construction.png',
+  commercial_construction: '/commercial_construction.png',
+  interior_design: '/interior_design.png',
+  floor_plans: '/floor_plans.png',
 };
 
 export const SERVICES: ServiceItem[] = [
