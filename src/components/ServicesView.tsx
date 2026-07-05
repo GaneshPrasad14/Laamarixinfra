@@ -12,82 +12,75 @@ export default function ServicesView({ onOpenQuoteWithService }: ServicesViewPro
     {
       id: 'architectural',
       title: 'Architectural Design',
-      tagline: 'Merging high-end aesthetics with structural efficiency.',
-      description: 'Our experienced architects deliver premium architectural planning that complies perfectly with contemporary and classic styles, maximizing usable space and passive natural light.',
+      tagline: 'Modern Ideas | Creative Designs | Dream Spaces | Realistic Views',
+      description: 'We Design Your Dreams, You Live in Reality. Transforming blueprints into masterpieces with structural efficiency.',
       subdivisions: [
-        'Premium Space Planning & Ergonomics',
-        'Traditional & Contemporary Elevations',
-        'Detailed Working Drawings for Construction',
-        'Vastu Planning & Alignment Analysis',
-        'Site Layout & Planning',
-        'Government Approval & Liaison Drawings'
+        'PLAN: 2D & 3D PLANNING',
+        'DESIGN: ELEVATION DESIGN',
+        'BUILD: QUALITY CONSTRUCTION',
+        'DELIVER: ON TIME DELIVERY'
       ],
-      image: IMAGES.about,
+      image: IMAGES.architectural_design,
       icon: Compass,
     },
     {
       id: 'structural',
       title: 'Structural Design',
-      tagline: 'Precision engineered calculations ensuring permanent safety.',
-      description: 'Your buildings need to stand robust for decades. Our expert structural engineers design strong columns, foundations, and load distributions using top-tier structural analysis software.',
+      tagline: 'STRENGTH. STABILITY. SAFETY.',
+      description: 'We design safe, durable and cost effective structures using advanced engineering principles and latest technology (ETABS, STAAD.Pro, AutoCAD, Revit).',
       subdivisions: [
-        'Excavation & Soil Testing Calculations',
-        'Reinforced Concrete Foundation Design',
-        'Heavy-Duty Beam & Column Engineering',
-        'Roofing Slab Structural Design',
-        'Earthquake-Resistant Layouts',
-        'Optimized Rebar Steel Reinforcement Estimates'
+        'Structural Planning & Analysis',
+        'RCC Design (Column, Beam, Slab)',
+        'Foundation & Retaining Wall Design',
+        'Structural Detailing & Steel Structure Design',
+        '3D Structural Modeling',
+        'BOQ & Estimation'
       ],
-      image: IMAGES.hero, // Use Dusk hero exterior for massive structure
+      image: IMAGES.structural_design, 
       icon: Activity,
     },
     {
       id: 'construction',
       title: 'House Construction',
-      tagline: 'Expert turnkey residential building solutions from A to Z.',
-      description: 'We handle everything from initial excavation to the final painted key handover. We build with premium branded cement, tested structural sand, pure steel, and daily engineering checks.',
+      tagline: 'From Concept to Completion – We Build Your Dream Home',
+      description: 'We Build Your Dream, You Live Your Vision. Quality Construction, On-Time Delivery, Transparent Process, Experienced Team, Customer Satisfaction.',
       subdivisions: [
-        'Excavation & Structural Foundation',
-        'Premium Solid Brick Work & Plastering',
-        'Slab Concrete Roofing & Waterproofing',
-        'High-End Vitrified/Granite Flooring',
-        'Professional Exterior & Interior Painting',
-        'Integrated Copper Wiring & PVC Plumbing',
-        'Pre-Handover Clean & Deep Inspection'
+        'FOUNDATION: Strong foundations build stronger tomorrows.',
+        'STRUCTURE: Precision in structure, perfection in every detail.',
+        'BRICKWORK: Shaping spaces. Building comfort.',
+        'FINISHING TOUCH: Where quality construction meets beautiful living.'
       ],
-      image: IMAGES.construction,
+      image: IMAGES.house_construction,
       icon: HardHat,
     },
     {
       id: 'commercial',
       title: 'Commercial Construction',
-      tagline: 'Custom executive, institutional, and clinical structures.',
-      description: 'Scale your business operations in Coimbatore or across Tamilnadu with modern structures customized for customer flow, high weight capacities, and elegant corporate facades.',
+      tagline: 'Building Spaces. Building Success.',
+      description: 'We design and construct commercial spaces that enhance your business and create long-term value.',
       subdivisions: [
-        'Executive Office Buildings & Boardrooms',
-        'High-Street Retail Showrooms',
-        'Clinical Facilities & Hospitals',
-        'Institutional & School Buildings',
-        'Heavy-Duty Storage Warehouses',
-        'Bespoke Hotel & Restaurant Complexes'
+        'Modern Architecture',
+        'Premium Quality',
+        'Timely Delivery',
+        'Client Satisfaction'
       ],
-      image: IMAGES.hero, // Re-use hero for big luxury showroom feel
+      image: IMAGES.commercial_construction,
       icon: Building2,
     },
     {
       id: 'interior',
-      title: 'Interior Design',
-      tagline: 'Elegant modular kitchen modules and premium custom cabinetry.',
-      description: 'Every room in your house should tell a stories. We engineer spectacular false ceilings, customize TV modules, install high-end wardrobes, and structure premium modular kitchens.',
+      title: 'Interior Designs',
+      tagline: 'Designing Spaces. Defining Lifestyles.',
+      description: 'Every space tells a story, we design yours. We craft interiors that blend aesthetics, comfort, and functionality to create spaces that truly reflect you. More than interiors, we design experiences.',
       subdivisions: [
-        'Luxury Living Room Design & Panelings',
-        'German-Mechanism Modular Kitchen Design',
-        'Custom Master Bedroom Wardrobes & TV Units',
-        'Sophisticated Lighting Design & Layouts',
-        'Drop-Down Acrylic & Gypsum False Ceilings',
-        'Bespoke Dining Area partitions'
+        'Creative Concepts & Functional Spaces',
+        'Premium Materials & Elegant Finishes',
+        'Timeless Designs & Attention to Detail',
+        'MODERN BEDROOM: Comfort meets style',
+        'STYLISH KITCHEN: Designed for effortless living',
+        'ELEGANT DINING: Where memories are made'
       ],
-      image: IMAGES.interior,
+      image: IMAGES.interior_design,
       icon: Palette,
     },
     {
@@ -102,7 +95,7 @@ export default function ServicesView({ onOpenQuoteWithService }: ServicesViewPro
         'Dynamic VR Virtual Interior walkthroughs',
         'Color combination & material mockups'
       ],
-      image: IMAGES.about, // Re-use blueprint review
+      image: IMAGES.floor_plans,
       icon: Layers,
     }
   ];
