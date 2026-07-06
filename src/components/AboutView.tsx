@@ -32,6 +32,12 @@ export default function AboutView() {
     }
   ];
 
+  const teamMembers = [
+    { name: 'Anand', role: 'Site Engineer', image: '/anand.JPG', fallback: 'A' },
+    { name: 'Vikash Kumar', role: 'Site Engineer', image: null, fallback: 'VK' },
+    { name: 'Kavya', role: 'Design Engineer', image: null, fallback: 'K' }
+  ];
+
   return (
     <div className="space-y-24 pb-24">
       
@@ -127,8 +133,47 @@ export default function AboutView() {
         </div>
       </section>
 
+      {/* Team Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
+        <div className="text-center space-y-4 max-w-3xl mx-auto mb-16">
+          <span className="text-xs font-bold text-gold-500 tracking-[0.25em] uppercase">The Experts Behind The Scenes</span>
+          <h2 className="font-serif text-3xl sm:text-4xl font-semibold tracking-tight text-luxury-black">
+            Our Engineering Team
+          </h2>
+          <div className="w-16 h-1 bg-gold-500 mx-auto"></div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {teamMembers.map((member, idx) => (
+            <motion.div 
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="bg-white border border-gold-500/10 rounded-xl overflow-hidden shadow-lg hover:shadow-xl hover:border-gold-500/30 transition-all text-center group"
+            >
+              <div className="w-full aspect-square bg-warm-bg relative overflow-hidden flex items-center justify-center">
+                {member.image ? (
+                  <img src={member.image} alt={member.name} className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-gold-50 to-gold-100 flex items-center justify-center">
+                    <span className="font-serif text-5xl text-gold-500/40">{member.fallback}</span>
+                  </div>
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              <div className="p-6">
+                <h3 className="font-serif text-xl font-bold text-luxury-black">{member.name}</h3>
+                <p className="font-mono text-xs text-gold-600 font-semibold uppercase tracking-wider mt-1">{member.role}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
       {/* 3. Split Section - Vision & Mission (Contrasting Dark Block) */}
-      <section className="bg-luxury-black text-white py-20 relative overflow-hidden">
+      <section className="bg-luxury-black text-white py-20 relative overflow-hidden mt-24">
         {/* Subtle decorative grid overlay */}
         <div className="absolute inset-0 bg-[radial-gradient(#C59B4B_1px,transparent_1px)] [background-size:20px_20px] opacity-[0.04]"></div>
 
