@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'motion/react';
-import { Compass, HardHat, Palette, Check, ArrowRight, Phone, Award, ShieldCheck, Landmark, Star } from 'lucide-react';
+import { Compass, HardHat, Palette, Check, ArrowRight, Phone, Award, ShieldCheck, Landmark, Star, Quote } from 'lucide-react';
 import { IMAGES } from '../constants';
 import { PageType } from '../types';
 
@@ -40,7 +40,7 @@ function Counter({ end, suffix, text }: { end: number, suffix: string, text: str
 }
 
 const TESTIMONIALS = [
-  { name: 'Karthikeyan', location: 'Coimbatore', text: 'LAAMARIX built our dream home exactly as we visualized. Their transparency in pricing and daily site updates were remarkable. Highly recommended!' },
+  { name: 'Karthikeyan', location: 'Coimbatore', text: 'Excellent interior work by LAAMARIX INFRA. The design, quality, and finishing are outstanding. Professional team, on-time delivery, and beautiful finishing. Highly recommended!' },
   { name: 'Ramesh Babu', location: 'Coimbatore', text: 'The structural quality and premium finishes are outstanding. The interior work in our living room was perfectly executed by their expert team.' },
   { name: 'Senthil Kumar', location: 'Trichy', text: 'From architectural planning to final handover, the process was completely stress-free. Very professional engineers and zero hidden costs.' },
   { name: 'Murugan', location: 'Theni', text: 'We hired them for a commercial building project. The modern elevation and timely delivery exceeded our expectations. Best builders in the region.' },
@@ -53,25 +53,31 @@ function TestimonialCarousel() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % TESTIMONIALS.length);
-    }, 5000);
+    }, 8000);
     return () => clearInterval(timer);
   }, []);
 
   return (
-    <div className="relative overflow-hidden w-full max-w-4xl mx-auto py-10">
+    <div className="relative overflow-hidden w-full max-w-5xl mx-auto py-10 px-4">
       <div 
-        className="flex transition-transform duration-700 ease-in-out" 
+        className="flex transition-transform duration-1000 ease-in-out" 
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {TESTIMONIALS.map((t, i) => (
-          <div key={i} className="min-w-full px-4 text-center space-y-6 shrink-0">
-            <div className="flex justify-center gap-1">
-              {[...Array(5)].map((_, j) => <Star key={j} className="w-5 h-5 text-gold-500 fill-gold-500" />)}
-            </div>
-            <p className="text-gray-600 font-serif text-lg md:text-xl italic max-w-2xl mx-auto">"{t.text}"</p>
-            <div>
-              <h4 className="font-bold text-luxury-black">{t.name}</h4>
-              <p className="text-xs text-gold-600 font-mono tracking-widest uppercase mt-1">{t.location}</p>
+          <div key={i} className="min-w-full px-4 shrink-0">
+            <div className="bg-white border border-gold-500/10 rounded-2xl p-8 md:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)] text-center relative max-w-4xl mx-auto">
+              <Quote className="w-12 h-12 text-gold-500/10 absolute top-6 left-6 md:top-10 md:left-10" />
+              <div className="relative z-10 space-y-6">
+                <div className="flex justify-center gap-1">
+                  {[...Array(5)].map((_, j) => <Star key={j} className="w-5 h-5 text-gold-500 fill-gold-500" />)}
+                </div>
+                <p className="text-gray-600 font-serif text-lg md:text-2xl leading-relaxed italic max-w-3xl mx-auto">"{t.text}"</p>
+                <div className="pt-4 flex flex-col items-center">
+                  <div className="w-10 h-1 bg-gold-500/30 rounded-full mb-4"></div>
+                  <h4 className="font-bold text-luxury-black text-lg">{t.name}</h4>
+                  <p className="text-xs text-gold-600 font-mono tracking-widest uppercase mt-1">{t.location}</p>
+                </div>
+              </div>
             </div>
           </div>
         ))}
