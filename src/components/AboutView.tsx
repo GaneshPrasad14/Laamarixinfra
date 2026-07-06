@@ -34,7 +34,7 @@ export default function AboutView() {
 
   const teamMembers = [
     { name: 'Anand', role: 'Site Engineer', image: '/anand.JPG', fallback: 'A' },
-    { name: 'Vikash Kumar', role: 'Site Engineer', image: null, fallback: 'VK' },
+    { name: 'Vikash Kumar', role: 'Site Engineer', image: '/vikash.png', fallback: 'VK' },
     { name: 'Kavya', role: 'Design Engineer', image: null, fallback: 'K' }
   ];
 
@@ -67,14 +67,14 @@ export default function AboutView() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           <div className="lg:col-span-6 space-y-6">
-            <span className="text-xs font-bold text-gold-500 tracking-[0.2em] uppercase">Headquartered in Coimbatore</span>
+            <span className="text-xs font-bold text-gold-500 tracking-[0.2em] uppercase">Headquartered in Theni</span>
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-luxury-black leading-tight">
               Shaping Spaces That Stand the Test of Time
             </h2>
             <div className="w-16 h-1 bg-gold-500"></div>
             
             <p className="text-gray-600 text-sm sm:text-base leading-relaxed text-justify">
-              LAAMARIX INFRA is a trusted construction company headquartered in Coimbatore, serving clients across Tamilnadu. We specialize in architectural planning, structural engineering, residential and commercial construction, interior design, 2D & 3D visualization, and turnkey project execution. 
+              LAAMARIX INFRA is a trusted construction company headquartered in Theni with a major branch in Coimbatore, serving clients across Tamilnadu. We specialize in architectural planning, structural engineering, residential and commercial construction, interior design, 2D & 3D visualization, and turnkey project execution. 
             </p>
             
             <p className="text-gray-600 text-sm sm:text-base leading-relaxed text-justify">
