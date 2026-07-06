@@ -114,11 +114,19 @@ export default function Footer({ setCurrentPage, onOpenQuote }: FooterProps) {
             
             <div className="flex items-start gap-3 text-sm text-gray-400">
               <MapPin className="w-5 h-5 text-gold-500 shrink-0 mt-0.5" />
-              <span>
-                7/110, Ruby School Road,<br />
-                Saravanampatti, Coimbatore,<br />
-                Tamilnadu - 641035
-              </span>
+              <div className="space-y-3">
+                <div>
+                  <strong className="text-white block mb-0.5">Main Office: Theni</strong>
+                  231/3, South Ricemill Street,<br />
+                  Varusanadu Main Road, Kadamalaikundu,<br />
+                  Theni (Dt) - 625579
+                </div>
+                <div>
+                  <strong className="text-white block mb-0.5">Branch Office: Coimbatore</strong>
+                  7/110, Ruby School Road,<br />
+                  Saravanampatti, Coimbatore (Dt) - 641035
+                </div>
+              </div>
             </div>
 
             <div className="flex items-center gap-3 text-sm text-gray-400">
