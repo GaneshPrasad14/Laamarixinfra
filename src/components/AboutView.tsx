@@ -111,7 +111,7 @@ export default function AboutView() {
               <div className="relative rounded-xl overflow-hidden border-2 border-gold-500/20 shadow-lg mx-auto w-48 h-48 md:w-full md:h-auto aspect-square">
                 <img 
                   src="/founder.jpeg" 
-                  alt="Sridhar Maarimuthu" 
+                  alt="Sridhar Marimuthu" 
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -119,7 +119,7 @@ export default function AboutView() {
             <div className="md:col-span-8 lg:col-span-9 space-y-4">
               <span className="text-xs font-bold text-gold-500 tracking-[0.2em] uppercase">Meet The Founder</span>
               <h3 className="font-serif text-3xl font-bold text-luxury-black">
-                Sridhar Maarimuthu
+                Sridhar Marimuthu
               </h3>
               <p className="font-mono text-sm text-gold-600 font-semibold uppercase tracking-wider">
                 B.E. CIVIL ENGINEERING
