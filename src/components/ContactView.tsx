@@ -133,13 +133,22 @@ export default function ContactView() {
                 <div className="w-10 h-10 bg-gold-50 text-gold-500 rounded-lg flex items-center justify-center shrink-0">
                   <MapPin className="w-5 h-5" />
                 </div>
-                <div className="space-y-1">
-                  <h4 className="font-serif text-sm font-semibold text-luxury-black">Office Address</h4>
-                  <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-                    LAAMARIX INFRA - Construction & Builders,<br />
-                    7/110, Ruby School Road, Saravanampatti,<br />
-                    Coimbatore, Tamilnadu - 641035
-                  </p>
+                <div className="space-y-4 w-full">
+                  <div className="space-y-1">
+                    <h4 className="font-serif text-sm text-luxury-black">Main Office: <span className="font-bold">Theni</span></h4>
+                    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                      231/3, South Ricemill Street, Varusanadu Main Road,<br />
+                      Kadamalaikundu, Theni (Dt) - 625579
+                    </p>
+                  </div>
+                  <div className="w-full h-px bg-gray-100"></div>
+                  <div className="space-y-1">
+                    <h4 className="font-serif text-sm text-luxury-black">Branch Office: <span className="font-bold">Coimbatore</span></h4>
+                    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                      7/110, Ruby School Road, Saravanampatti,<br />
+                      Coimbatore (Dt) - 641035
+                    </p>
+                  </div>
                 </div>
               </div>
 
