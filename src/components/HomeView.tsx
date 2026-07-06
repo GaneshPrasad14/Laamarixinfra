@@ -1,7 +1,93 @@
-import { motion } from 'motion/react';
-import { Compass, HardHat, Palette, Check, ArrowRight, Phone, Award, ShieldCheck, Landmark } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { motion, useInView } from 'motion/react';
+import { Compass, HardHat, Palette, Check, ArrowRight, Phone, Award, ShieldCheck, Landmark, Star } from 'lucide-react';
 import { IMAGES } from '../constants';
 import { PageType } from '../types';
+
+function Counter({ end, suffix, text }: { end: number, suffix: string, text: string }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  useEffect(() => {
+    if (isInView) {
+      let start = 0;
+      const duration = 2000;
+      const increment = end / (duration / 16);
+      const timer = setInterval(() => {
+        start += increment;
+        if (start >= end) {
+          setCount(end);
+          clearInterval(timer);
+        } else {
+          setCount(Math.floor(start));
+        }
+      }, 16);
+      return () => clearInterval(timer);
+    }
+  }, [isInView, end]);
+
+  return (
+    <div ref={ref} className="text-center p-6 space-y-2">
+      <div className="font-serif text-5xl md:text-6xl font-bold text-gold-500">
+        {count}{suffix}
+      </div>
+      <div className="text-luxury-black font-semibold uppercase tracking-widest text-xs">
+        {text}
+      </div>
+    </div>
+  );
+}
+
+const TESTIMONIALS = [
+  { name: 'Karthikeyan', location: 'Coimbatore', text: 'LAAMARIX built our dream home exactly as we visualized. Their transparency in pricing and daily site updates were remarkable. Highly recommended!' },
+  { name: 'Ramesh Babu', location: 'Coimbatore', text: 'The structural quality and premium finishes are outstanding. The interior work in our living room was perfectly executed by their expert team.' },
+  { name: 'Senthil Kumar', location: 'Trichy', text: 'From architectural planning to final handover, the process was completely stress-free. Very professional engineers and zero hidden costs.' },
+  { name: 'Murugan', location: 'Theni', text: 'We hired them for a commercial building project. The modern elevation and timely delivery exceeded our expectations. Best builders in the region.' },
+  { name: 'Vignesh', location: 'Madurai', text: 'Excellent interior design execution! They transformed our old kitchen into an ultra-modern modular setup with perfect lighting.' },
+];
+
+function TestimonialCarousel() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % TESTIMONIALS.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="relative overflow-hidden w-full max-w-4xl mx-auto py-10">
+      <div 
+        className="flex transition-transform duration-700 ease-in-out" 
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+      >
+        {TESTIMONIALS.map((t, i) => (
+          <div key={i} className="min-w-full px-4 text-center space-y-6 shrink-0">
+            <div className="flex justify-center gap-1">
+              {[...Array(5)].map((_, j) => <Star key={j} className="w-5 h-5 text-gold-500 fill-gold-500" />)}
+            </div>
+            <p className="text-gray-600 font-serif text-lg md:text-xl italic max-w-2xl mx-auto">"{t.text}"</p>
+            <div>
+              <h4 className="font-bold text-luxury-black">{t.name}</h4>
+              <p className="text-xs text-gold-600 font-mono tracking-widest uppercase mt-1">{t.location}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="flex justify-center gap-2 mt-8">
+        {TESTIMONIALS.map((_, i) => (
+          <button 
+            key={i} 
+            onClick={() => setCurrentIndex(i)}
+            className={`w-2.5 h-2.5 rounded-full transition-colors ${i === currentIndex ? 'bg-gold-500' : 'bg-gray-300'}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 interface HomeViewProps {
   setCurrentPage: (page: PageType) => void;
@@ -277,6 +363,28 @@ export default function HomeView({ setCurrentPage, onOpenQuote }: HomeViewProps)
           </div>
 
         </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="bg-warm-white border-y border-gold-500/10 py-16">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 divide-y sm:divide-y-0 sm:divide-x divide-gold-500/20">
+            <Counter end={4} suffix="+" text="Completed Projects" />
+            <Counter end={6} suffix="+" text="Completed Interior Projects" />
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="text-center space-y-4 max-w-3xl mx-auto mb-8">
+          <span className="text-xs font-bold text-gold-500 tracking-[0.25em] uppercase">Client Testimonials</span>
+          <h2 className="font-serif text-3xl sm:text-4xl font-semibold tracking-tight text-luxury-black">
+            What Our Clients Say
+          </h2>
+          <div className="w-16 h-1 bg-gold-500 mx-auto"></div>
+        </div>
+        <TestimonialCarousel />
       </section>
 
       {/* 5. Quick Consultation Block */}
