@@ -16,6 +16,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenQuote }: Nav
     { label: 'About Us', id: 'about' as PageType },
     { label: 'Services', id: 'services' as PageType },
     { label: 'Our Process', id: 'process' as PageType },
+    { label: 'Pricing', id: 'pricing' as PageType },
     { label: 'Contact Us', id: 'contact' as PageType },
   ];
 
