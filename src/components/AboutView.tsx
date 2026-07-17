@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Target, Eye, Shield, Users, Lightbulb, Sparkles, HeartHandshake } from 'lucide-react';
+import { Target, Eye, Shield, Users, Lightbulb, Sparkles, HeartHandshake, Briefcase, ExternalLink, Info } from 'lucide-react';
 import { IMAGES } from '../constants';
 
 export default function AboutView() {
@@ -169,6 +169,68 @@ export default function AboutView() {
               </div>
             </motion.div>
           ))}
+        </div>
+      </section>
+
+      {/* Internship Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
+        <div className="bg-gradient-to-br from-gold-50 to-warm-white border border-gold-500/20 rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gold-500/5 rounded-full blur-3xl -mr-20 -mt-20"></div>
+          
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-5 space-y-6">
+              <div className="w-12 h-12 bg-white rounded-xl text-gold-600 flex items-center justify-center shadow-sm">
+                <Briefcase className="w-6 h-6" />
+              </div>
+              <div>
+                <span className="text-xs font-bold text-gold-600 tracking-[0.2em] uppercase">Careers & Growth</span>
+                <h2 className="font-serif text-3xl font-bold text-luxury-black mt-2 leading-tight">
+                  Internship Opportunities
+                </h2>
+              </div>
+              <div className="w-16 h-1 bg-gold-500"></div>
+              <p className="text-gray-600 text-sm md:text-base leading-relaxed text-justify">
+                Kickstart your career in civil engineering, architecture, and construction management. LAAMARIX INFRA offers hands-on, practical internship programs designed to bridge the gap between academic theory and real-world execution.
+              </p>
+              
+              <div className="flex items-start gap-3 p-4 bg-white/60 border border-gold-500/20 rounded-xl">
+                <Info className="w-5 h-5 text-gold-600 shrink-0 mt-0.5" />
+                <p className="text-xs text-luxury-black leading-relaxed font-semibold">
+                  <span className="text-gold-700">Important Note:</span> You are only required to pay the internship fee at the time of official joining, not during the application process.
+                </p>
+              </div>
+
+              <a
+                href="https://forms.gle/y23GcEShLrf2gbwW9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-luxury-black hover:bg-gold-500 text-white hover:text-luxury-black font-bold text-sm tracking-wider uppercase rounded-lg shadow-xl shadow-black/10 transition-all duration-300"
+              >
+                Apply Now <ExternalLink className="w-4 h-4" />
+              </a>
+            </div>
+
+            <div className="lg:col-span-7">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {[
+                  { duration: '7 Days', price: '₹500', desc: 'Quick introductory field exposure and basic site familiarization.' },
+                  { duration: '15 Days', price: '₹1000', desc: 'In-depth observation of structural processes and material planning.' },
+                  { duration: '1 Month', price: '₹1500', desc: 'Comprehensive hands-on training covering execution and management.' }
+                ].map((tier, idx) => (
+                  <div key={idx} className="bg-white border border-gold-500/10 rounded-2xl p-6 text-center space-y-4 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <h3 className="font-serif text-xl font-bold text-luxury-black">{tier.duration}</h3>
+                    <div className="text-2xl font-bold text-gold-600 font-mono tracking-tighter">
+                      {tier.price}
+                    </div>
+                    <div className="w-8 h-px bg-gold-500/30 mx-auto"></div>
+                    <p className="text-xs text-gray-500 leading-relaxed">
+                      {tier.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
