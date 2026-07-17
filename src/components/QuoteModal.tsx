@@ -13,6 +13,8 @@ export default function QuoteModal({ isOpen, onClose, preselectedService = 'Arch
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [service, setService] = useState(preselectedService);
+  const [flatSize, setFlatSize] = useState('');
+  const [location, setLocation] = useState('');
   const [message, setMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
@@ -45,7 +47,7 @@ export default function QuoteModal({ isOpen, onClose, preselectedService = 'Arch
     localStorage.setItem('laamarix_quotes', JSON.stringify(list));
 
     // Send details to WhatsApp
-    const text = `Hi LAAMARIX INFRA, I would like to request a consultation.\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nService: ${service}\nMessage: ${message}`;
+    const text = `Hi LAAMARIX INFRA, I would like to request a consultation.\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nService: ${service}\nSize: ${flatSize}\nLocation: ${location}\nMessage: ${message}`;
     const url = `https://wa.me/919566953683?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank');
 
@@ -59,6 +61,8 @@ export default function QuoteModal({ isOpen, onClose, preselectedService = 'Arch
     setEmail('');
     setPhone('');
     setService('Architectural Design');
+    setFlatSize('');
+    setLocation('');
     setMessage('');
     setSubmitted(false);
     onClose();
@@ -160,6 +164,34 @@ export default function QuoteModal({ isOpen, onClose, preselectedService = 'Arch
                     <option value="Interior Design">Interior Design</option>
                     <option value="Floor Plans & Visualization">Floor Plans & Visualization</option>
                   </select>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-semibold text-luxury-black uppercase tracking-wider mb-2">
+                    Flat / Plot Size
+                  </label>
+                  <input
+                    type="text"
+                    value={flatSize}
+                    onChange={(e) => setFlatSize(e.target.value)}
+                    placeholder="e.g. 1500 sq.ft, 3 BHK"
+                    className="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-lg text-luxury-black placeholder-gray-400 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all text-sm"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-luxury-black uppercase tracking-wider mb-2">
+                    Location
+                  </label>
+                  <input
+                    type="text"
+                    value={location}
+                    onChange={(e) => setLocation(e.target.value)}
+                    placeholder="e.g. Saravanampatti, Coimbatore"
+                    className="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-lg text-luxury-black placeholder-gray-400 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all text-sm"
+                  />
                 </div>
               </div>
 
