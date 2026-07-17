@@ -8,6 +8,7 @@ import AboutView from './components/AboutView';
 import ServicesView from './components/ServicesView';
 import ProcessView from './components/ProcessView';
 import ContactView from './components/ContactView';
+import PricingView from './components/PricingView';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<PageType>('home');
@@ -38,6 +39,8 @@ export default function App() {
         return <ServicesView onOpenQuoteWithService={handleOpenQuoteWithService} />;
       case 'process':
         return <ProcessView onOpenQuote={handleOpenQuote} />;
+      case 'pricing':
+        return <PricingView onOpenQuote={handleOpenQuote} />;
       case 'contact':
         return <ContactView />;
       default:
